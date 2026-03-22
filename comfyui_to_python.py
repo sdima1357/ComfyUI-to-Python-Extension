@@ -410,6 +410,7 @@ class CodeGenerator:
             + imports_code
             + ["", main_function_code, "", 'if __name__ == "__main__":', "\tmain()"]
         )
+        FileHandler.write_code_to_file("unformatted_comfyui_to_python_output.py", final_code)
         # Format the final code according to PEP 8 using the Black library
         final_code = black.format_str(final_code, mode=black.Mode())
 
