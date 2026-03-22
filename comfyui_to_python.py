@@ -263,7 +263,7 @@ class CodeGenerator:
                     inputs["unique_id"] = random.randint(1, 2**64)
 
             # Create executed variable and generate code
-            executed_variables[idx] = f"{self.clean_variable_name(class_type)}_{idx}"
+            executed_variables[idx] = f"{self.clean_variable_name(class_type)}_{self.clean_variable_name(idx)}"
             inputs = self.update_inputs(inputs, executed_variables)
 
             if is_special_function:
